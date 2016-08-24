@@ -3,9 +3,7 @@ package com.peterpotts.interview
 import scala.collection.immutable.IndexedSeq
 
 object BinarySearch {
-  def main(args: Array[String]): Unit = {
-    println(binarySearch(IndexedSeq(1, 4, 6, 7, 9), 7))
-  }
+  def main(args: Array[String]): Unit = println(binarySearch(IndexedSeq(1, 4, 6, 7, 9), 7))
 
   def binarySearch(seq: IndexedSeq[Int], target: Int): Option[Int] = {
     def loop(lower: Int, upper: Int, target: Int): Option[Int] = {

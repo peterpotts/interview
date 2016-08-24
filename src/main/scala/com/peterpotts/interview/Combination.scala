@@ -3,9 +3,7 @@ package com.peterpotts.interview
 import scala.collection.immutable.Seq
 
 object Combination {
-  def main(args: Array[String]): Unit = {
-    combinations(3, 5).foreach(println)
-  }
+  def main(args: Array[String]): Unit = combinations(3, 5).foreach(println)
 
   def combinations(k: Int, n: Int): Seq[Seq[Int]] = {
     if (k == 0) {
