@@ -1,5 +1,7 @@
 package com.peterpotts.interview
 
+import scala.collection.immutable.Seq
+
 object Combination {
   def main(args: Array[String]): Unit = {
     combinations(3, 5).foreach(println)
