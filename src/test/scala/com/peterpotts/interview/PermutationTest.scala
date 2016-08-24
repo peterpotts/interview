@@ -5,15 +5,16 @@ import org.scalatest.{Matchers, WordSpec}
 
 import scala.util.Random
 
-class CombinationTest extends WordSpec with Matchers with MockitoSugar {
-  "A combination" should {
+class PermutationTest extends WordSpec with Matchers with MockitoSugar {
+  "A permutation" should {
     "have predictable size" in {
       val n = Random.nextInt(10) + 1
-      val k = Random.nextInt(n)
-      val combinations = Combination.combinations(k, n)
-      val expected = Factorial(n) / (Factorial(k) * Factorial(n - k))
+      val seq = 0 until n
+      val combinations = Permutation.permutations(seq)
+      val expected = Factorial(n)
       val actual = combinations.size
       actual shouldEqual expected
     }
   }
 }
+

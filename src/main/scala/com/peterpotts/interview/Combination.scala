@@ -15,7 +15,7 @@ object Combination {
         seqSeq.map(seq => seq :+ i)
       }
 
-      seqSeqSeq.fold[Seq[Seq[Int]]](Seq.empty)(_ ++ _)
+      seqSeqSeq.flatten
     }
   }
 }
