@@ -1,6 +1,5 @@
 package com.peterpotts.interview
 
-//noinspection ScalaStyle
 object Combination {
   def main(args: Array[String]): Unit = {
     combinations(3, 5).foreach(println)

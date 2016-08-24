@@ -1,6 +1,5 @@
 package com.peterpotts.interview
 
-//noinspection ScalaStyle
 object Permutation {
   def main(args: Array[String]): Unit = {
     permutations(0 until 3).foreach(println)
