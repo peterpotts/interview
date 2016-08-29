@@ -7,8 +7,11 @@ trait Connection {
 }
 
 class ConnectionFactory {
+  var connectionsCreated = 0
+
   def createConnection: Connection =
     new Connection {
+      connectionsCreated += 1
       private var open = true
 
       def write(text: String): Unit = {
