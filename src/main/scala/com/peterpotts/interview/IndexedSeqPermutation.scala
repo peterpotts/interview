@@ -3,9 +3,9 @@ package com.peterpotts.interview
 import scala.collection.immutable.IndexedSeq
 
 object IndexedSeqPermutation {
-  def permutations(seq: IndexedSeq[Int]): IndexedSeq[IndexedSeq[Int]] = {
+  def permutations[T](seq: IndexedSeq[T]): IndexedSeq[IndexedSeq[T]] = {
     if (seq.isEmpty) {
-      IndexedSeq(IndexedSeq.empty[Int])
+      IndexedSeq(IndexedSeq.empty[T])
     } else {
       seq.indices.flatMap { index =>
         val (left, middle +: right) = seq.splitAt(index)
