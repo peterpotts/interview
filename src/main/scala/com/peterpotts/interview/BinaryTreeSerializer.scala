@@ -1,6 +1,6 @@
 package com.peterpotts.interview
 
-object BinaryTreeSerializer extends App {
+object BinaryTreeSerializer {
   def serialize(root: Node): Stream[Chunk] =
     Value(root.value) #:: {
       root match {
