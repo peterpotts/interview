@@ -1,11 +1,10 @@
 package com.peterpotts.interview
 
-import org.scalatest.mock.MockitoSugar
 import org.scalatest.{Matchers, WordSpec}
 
 import scala.util.Random
 
-class SeqPermutationTest extends WordSpec with Matchers with MockitoSugar {
+class SeqPermutationTest extends WordSpec with Matchers {
   "A sequence permutation" should {
     "have predictable size" in {
       val n = Random.nextInt(5) + 1

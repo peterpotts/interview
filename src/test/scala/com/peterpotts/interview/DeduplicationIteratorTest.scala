@@ -1,9 +1,8 @@
 package com.peterpotts.interview
 
-import org.scalatest.mock.MockitoSugar
 import org.scalatest.{Matchers, WordSpec}
 
-class DeduplicationIteratorTest extends WordSpec with Matchers with MockitoSugar {
+class DeduplicationIteratorTest extends WordSpec with Matchers {
   "A deduplication iterator" should {
     "drop consecutive duplicate elements" in {
       val actual = new DeduplicationIterator(Iterator(1, 2, 2, 3, 3, 3, 4, 5, 6, 6, 7))

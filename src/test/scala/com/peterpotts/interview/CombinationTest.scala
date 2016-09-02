@@ -1,11 +1,10 @@
 package com.peterpotts.interview
 
-import org.scalatest.mock.MockitoSugar
 import org.scalatest.{Matchers, WordSpec}
 
 import scala.util.Random
 
-class CombinationTest extends WordSpec with Matchers with MockitoSugar {
+class CombinationTest extends WordSpec with Matchers {
   "A combination" should {
     "have predictable size" in {
       val n = Random.nextInt(10) + 1

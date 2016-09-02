@@ -1,11 +1,10 @@
 package com.peterpotts.interview
 
-import org.scalatest.mock.MockitoSugar
 import org.scalatest.{Matchers, WordSpec}
 
 import scala.collection.immutable.IndexedSeq
 
-class BinarySearchTest extends WordSpec with Matchers with MockitoSugar {
+class BinarySearchTest extends WordSpec with Matchers {
   "A binary search" should {
     "find" in {
       BinarySearch.binarySearch(IndexedSeq(1, 4, 6, 7, 9), 7) shouldEqual Some(3)
