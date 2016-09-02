@@ -20,22 +20,22 @@ object BinaryTreeSerializer extends App {
       stream match {
         case Value(char) #:: branch =>
           branch match {
-            case Leaf #:: more => (Node(char, None, None), more)
-            case Left #:: argument =>
-              val (left, more) = loop(argument)
-              Node(char, Some(left), None) -> more
-            case Right #:: argument => Node(char, None, None)
-              val (right, more) = loop(argument)
-              Node(char, None, Some(right)) -> more
-            case Fork #:: arguments => Node(char, None, None)
-              val (left, argument) = loop(arguments)
-              val (right, more) = loop(argument)
-              Node(char, Some(left), Some(right)) -> more
+            case Leaf #:: zero => (Node(char, None, None), zero)
+            case Left #:: one =>
+              val (left, zero) = loop(one)
+              Node(char, Some(left), None) -> zero
+            case Right #:: one => Node(char, None, None)
+              val (right, zero) = loop(one)
+              Node(char, None, Some(right)) -> zero
+            case Fork #:: two => Node(char, None, None)
+              val (left, one) = loop(two)
+              val (right, zero) = loop(one)
+              Node(char, Some(left), Some(right)) -> zero
           }
       }
 
-    val (node, more) = loop(stream)
-    require(more.isEmpty)
+    val (node, empty) = loop(stream)
+    require(empty.isEmpty)
     node
   }
 }
