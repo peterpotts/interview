@@ -15,8 +15,8 @@ object MaximumSumSlice {
   }
 
   def fold(array: Array[Int]): Int =
-    array.foldRight((Int.MinValue, 0)) {
-      case (value, (max, sum)) =>
+    array.foldLeft((Int.MinValue, 0)) {
+      case ((max, sum), value) =>
         val foldMax = math.max(max, sum + value)
         val foldSum = math.max(0, sum + value)
         foldMax -> foldSum
