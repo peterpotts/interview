@@ -1,5 +1,5 @@
-Exact Real Arithmetic using Mobius Transformations
-==================================================
+Interview Questions and Answers
+===============================
 
 Usage
 -----
@@ -14,18 +14,3 @@ Testing
 To tun the tests:
 
     sbt test
-
-Plugins
--------
-
-To visualize the dependencies:
-
-    sbt dependency-graph
-
-To check code style:
-
-    sbt scalastyle
-
-To create a fat jar:
-
-    sbt assembly
