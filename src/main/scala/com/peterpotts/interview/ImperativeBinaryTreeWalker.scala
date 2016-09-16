@@ -1,7 +1,5 @@
 package com.peterpotts.interview
 
-import com.peterpotts.interview.BinaryTreeWalker._
-
 import scala.collection.mutable
 
 object ImperativeBinaryTreeWalker extends BinaryTreeWalker {
