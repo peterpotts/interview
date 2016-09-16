@@ -1,5 +1,6 @@
 package com.peterpotts.interview
 
+import com.peterpotts.interview.BinaryTreeSerializer._
 import org.scalatest.{Matchers, WordSpec}
 
 class BinaryTreeSerializerTest extends WordSpec with Matchers {

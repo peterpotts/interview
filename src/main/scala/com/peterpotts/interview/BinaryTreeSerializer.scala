@@ -38,18 +38,19 @@ object BinaryTreeSerializer {
     require(empty.isEmpty)
     node
   }
+
+  case class Node(value: Char, left: Option[Node], right: Option[Node])
+
+  sealed trait Chunk
+
+  case class Value(char: Char) extends Chunk
+
+  case object Leaf extends Chunk
+
+  case object Left extends Chunk
+
+  case object Right extends Chunk
+
+  case object Fork extends Chunk
+
 }
-
-case class Node(value: Char, left: Option[Node], right: Option[Node])
-
-sealed trait Chunk
-
-case class Value(char: Char) extends Chunk
-
-case object Leaf extends Chunk
-
-case object Left extends Chunk
-
-case object Right extends Chunk
-
-case object Fork extends Chunk
