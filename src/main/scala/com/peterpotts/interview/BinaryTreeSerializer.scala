@@ -16,35 +16,47 @@ object BinaryTreeSerializer {
         output += Some(node.value)
       case None =>
         output += None
-      }
+    }
 
     while (hasNext) next()
     output.toList
   }
 
   def deserialize(list: List[Option[Int]]): Node = {
-    var input = list
-    val output = mutable.Stack[Option[Node]]()
+    val output = mutable.Stack[Chunk]()
 
-    def hasNext: Boolean = input.isEmpty
+    def hasNext = output.size > 1 && output.head.isInstanceOf[ValueLeftRight]
 
     def next(): Unit = {
-      val head = input.head
-      input = input.tail
+      val ValueLeftRight(node) = output.pop()
 
-      head match {
-        case Some(value) =>
-
-        case None =>
-          output.push(None)
+      output.pop() match {
+        case Value(value) =>
+          output.push(ValueLeft(value, node))
+        case ValueLeft(value, left) =>
+          output.push(ValueLeftRight(Some(Node(left, value, node))))
+        case error =>
+          throw new MatchError(error)
       }
-
     }
 
-    while (hasNext) next()
-    println(input)
-    println(output)
-    println("-----------------")
-    output.head.get
+    list.foreach {
+      case Some(value) =>
+        output.push(Value(value))
+      case None =>
+        output.push(ValueLeftRight(None))
+        while (hasNext) next()
+    }
+
+    val ValueLeftRight(node) = output.pop()
+    node.get
   }
 }
+
+sealed trait Chunk
+
+case class Value(value: Int) extends Chunk
+
+case class ValueLeft(value: Int, left: Option[Node]) extends Chunk
+
+case class ValueLeftRight(node: Option[Node]) extends Chunk
