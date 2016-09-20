@@ -3,9 +3,9 @@ package com.peterpotts.interview
 import scala.collection.mutable
 
 object BreadthFirstBinaryTreeWalker {
-  def walk(node: Node): List[Int] = {
+  def walk(root: Node): List[Int] = {
     val output = mutable.Buffer.empty[Int]
-    val input = mutable.Queue(node)
+    val input = mutable.Queue(root)
 
     def hasNext: Boolean = input.nonEmpty
 

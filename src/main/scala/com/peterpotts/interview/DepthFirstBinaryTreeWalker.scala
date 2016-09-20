@@ -3,9 +3,9 @@ package com.peterpotts.interview
 import scala.collection.mutable
 
 object DepthFirstBinaryTreeWalker {
-  def walk(node: Node): List[Int] = {
+  def walk(root: Node): List[Int] = {
     val output = mutable.Buffer.empty[Int]
-    val input = mutable.Stack[Any](node)
+    val input = mutable.Stack[Any](root)
 
     def hasNext: Boolean = input.nonEmpty
 

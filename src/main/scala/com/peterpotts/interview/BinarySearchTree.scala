@@ -1,10 +1,16 @@
 package com.peterpotts.interview
 
 object BinarySearchTree {
-  val root = Node(Node(Node(1),3,Node(4)),5,Node(Node(7),10,Node(12)))
+  def contains(root: Node, value: Int): Boolean = {
+    var node: Option[Node] = Some(root)
 
-  def contains(node: Node, value: Int): Boolean = {
-    ???
+    def hasNext = node.isDefined && node.get.value != value
+
+    def next(): Unit = if (value < node.get.value) node = node.get.left else node = node.get.right
+
+    while (hasNext) next()
+
+    node.isDefined
   }
 
 }
