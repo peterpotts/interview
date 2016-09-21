@@ -27,7 +27,6 @@ class TwinCakeTest extends WordSpec with Matchers {
 
     "be shared if random" in {
       val cherries = Seq.fill(2 + Random.nextInt(10) * 2)(Random.nextDouble() * 360.0)
-      println(cherries)
       val theta = TwinCake.slice(cherries)
       theta.isDefined shouldEqual true
     }
