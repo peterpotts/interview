@@ -12,14 +12,8 @@ object BreadthFirstBinaryTreeWalker {
     def next(): Unit = {
       val node = input.dequeue()
       output += node.value
-
-      if (node.left.isDefined) {
-        input.enqueue(node.left.get)
-      }
-
-      if (node.right.isDefined) {
-        input.enqueue(node.right.get)
-      }
+      if (node.left.isDefined) input.enqueue(node.left.get)
+      if (node.right.isDefined) input.enqueue(node.right.get)
     }
 
     while (hasNext) next()
